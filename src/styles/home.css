@@ -1,0 +1,72 @@
+
+
+.hero__subtitle video {
+    width: 2.3rem;
+    height: 2.3rem;
+    margin-top: 0px;
+}
+
+.hero__content h1 {
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin-top: auto;
+    margin-bottom: 2rem;
+    color: var(--heading-color)
+}
+
+.hero__content h1 .highlight {
+    color: var(--secondary-color);
+}
+
+.hero__content p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.5rem;
+    margin-top: 0;
+}
+
+#para {
+    color: hsl(240, 76%, 63%);
+    font-weight: 500; 
+    padding: 0%;
+}
+
+.hero__img-box video {
+    width: 100%;
+    height: 350px;
+    border: 1px solid var(--secondary-color);  
+    border-radius: 20px; 
+    object-fit: cover; 
+}
+
+.hero__content{
+    padding-top: 3.5rem;
+}
+.hero__img-box{
+    padding-top: 2rem;
+
+}
+
+.services__subtitle{
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgb(3, 3, 175);
+    font-family: var(--subtitle-font-name);
+}
+
+.services__title{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.featured__tour-title{
+    font-style: 2.3rem;
+    font-weight: 600;
+}
+
+.gallery__title{
+    font-size: 2.3rem ;
+    margin-bottom: 2.5rem;
+    margin-top: 1rem;
+}
+ 

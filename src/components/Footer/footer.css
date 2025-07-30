@@ -1,0 +1,40 @@
+        
+
+
+.footer{
+    padding-top: 70px;
+    padding-bottom: 30px;
+
+}
+
+.footer .logo img{
+    width: 80%;
+    margin-left: 50px; 
+    margin-bottom: 1rem;
+}
+
+.footer .logo p{
+    color: var(--text-color);
+    padding-right: 50px;
+}
+
+.social__links span a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.footer__links-title {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.footer__quick-links li a{
+     text-decoration: none;
+     color: var(--text-color);
+     font-size: 1.1rem;
+}
+
+.copywrite {
+    color:blueviolet;
+}
