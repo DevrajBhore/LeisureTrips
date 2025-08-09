@@ -51,12 +51,12 @@
 }
 
 .nav-links a:hover {
-  color: #ff5722;
+  color: #1100ff;
 }
 
 /* --- Login Button --- */
 .btn-login {
-  background-color: #ff5722;
+  background-color: #224aff;
   color: #fff !important;
   padding: 0.4rem 0.9rem;
   border-radius: 6px;
