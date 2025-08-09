@@ -9,8 +9,9 @@
 
 .footer .logo img{
     width: 80%;
-    margin-left: 50px; 
-    margin-bottom: 1rem;
+    margin-top: -60px;
+    /* margin-left: 50px;
+    margin-bottom: 1rem; */
 }
 
 .footer .logo p{

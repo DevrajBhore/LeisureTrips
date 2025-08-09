@@ -1,78 +1,43 @@
-import React, {useRef, useEffect} from 'react'
-import { Container, Row, Button } from 'reactstrap'
-import { NavLink, Link} from 'react-router-dom'
-import logo from '../../assets/images/logo.png'
-import './header.css';
-import { useNavigate } from 'react-router-dom';
-
-const nav_links=[
-  {
-    path:'/home',
-    display:'Home'
-  },
-  {
-    path:'/about',
-    display:'About'
-  },
-  {
-    path:'/tours',
-    display:'Tours'
-  }
-]
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import "./header.css";
+import logo from "../../assets/images/LTlogo.png"; // update to your logo path
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-const headerRef = useRef(null)
-
-const stickyHeaderFunc = () => {
-  window.addEventListener('scroll', ()=>{
-    if(document.body.scrollTop >80 || document.documentElement.scrollTop >80){
-      headerRef.current.classList.add('sticky__header')
-    } else {
-      headerRef.current.classList.remove('sticky__header')
-    }
-  })
-}
-
-useEffect(()=>{
-  stickyHeaderFunc()
-
-  return window.removeEventListener('scroll', stickyHeaderFunc);
-})
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="header" ref={headerRef}>
-      <container>
-        <row>
-          <div className="nav_wrapper d-flex align-items-center justify-content-between">
-            <div className="logo">
-              <img src={logo} alt="leisuretrips logo"/>
-            </div>
-            <div className="navigation">
-              <ul className="menu d-flex align-items-center gap-5">
-                {
-                  nav_links.map((item, index) => (
-                    <li className="nav__item" key={index}>
-                      <NavLink to={item.path} className={navClass => navClass.isActive ? "active__link" : " "}>{item.display}</NavLink>
-                    </li>
-                  ))
-                }
-              </ul>
-            </div> 
-            <div className="nav_right d-flex align-items-center gap-4">
-              <div className="nav_btns d-flex align-items-center gap-4">
-                <Button className="btn secondary__btn"><Link to="/login">Login</Link></Button>
-                <Button className="btn primary__btn"><Link to="/register">Register</Link></Button>
-              </div>
-              <span className="mobile__menu">
-                <i class="ri-menu-line"></i>
-              </span>
-            </div>            
-          </div>
-        </row>
-      </container>
-    </header>
-  )
-}
+    <header className="header">
+      <div className="header-container">
+        {/* Logo */}
+        <Link to="/" className="LTlogo" onClick={closeMenu}>
+          <img src={logo} alt="NomadGym Logo" />
+        </Link>
 
-export default Header 
+        {/* Desktop Navigation */}
+        <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
+          <Link to="/" onClick={closeMenu}>Home</Link>
+          <Link to="/about" onClick={closeMenu}>About</Link>
+          <Link to="/gallery" onClick={closeMenu}>Gallery</Link>
+          <Link to="/login"  onClick={closeMenu}>Login</Link>
+          <Link to="/Register" className="btn-login" onClick={closeMenu}>Register</Link>
+        </nav>
+
+        {/* Hamburger Menu */}
+        <div
+          className={`hamburger ${menuOpen ? "active" : ""}`}
+          onClick={toggleMenu}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
